@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task6/search_page.dart';
 import 'package:task6/product_card.dart';
+import 'package:task6/details_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -96,7 +97,15 @@ class HomePage extends StatelessWidget {
                 ),
                 itemCount: 4, 
                 itemBuilder: (context, index) {
-                  return ProductCard();
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const DetailsPage()),
+                      );
+                    },
+                    child: ProductCard(),
+                  );
                 },
               ),
             ),
