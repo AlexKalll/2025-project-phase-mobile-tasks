@@ -95,7 +95,7 @@ class HomePage extends StatelessWidget {
                   mainAxisSpacing: 16.0,
                   childAspectRatio: 0.7,
                 ),
-                itemCount: 4, 
+                itemCount: 4,
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
@@ -113,8 +113,13 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.blueAccent,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AddProductPage()),
+          );
+        },
+        backgroundColor: Colors.blue[700],
         child: const Icon(Icons.add, color: Colors.white),
       ),
     );
