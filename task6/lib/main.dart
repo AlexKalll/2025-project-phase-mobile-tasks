@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task6/search_page.dart';
+import 'package:task6/product_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -74,7 +76,12 @@ class HomePage extends StatelessWidget {
                 ),
                 IconButton(
                   icon: const Icon(Icons.search, color: Colors.black),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SearchPage()),
+                    );
+                  },
                 ),
               ],
             ),
@@ -87,7 +94,7 @@ class HomePage extends StatelessWidget {
                   mainAxisSpacing: 16.0,
                   childAspectRatio: 0.7,
                 ),
-                itemCount: 4, // Placeholder for number of products
+                itemCount: 4, 
                 itemBuilder: (context, index) {
                   return ProductCard();
                 },
@@ -100,65 +107,6 @@ class HomePage extends StatelessWidget {
         onPressed: () {},
         backgroundColor: Colors.blueAccent,
         child: const Icon(Icons.add, color: Colors.white),
-      ),
-    );
-  }
-}
-
-class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
-              child: Image.network(
-                'https://via.placeholder.com/150',
-                fit: BoxFit.cover,
-                width: double.infinity,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Derby Leather Shoes',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  'Men\'s shoe',
-                  style: TextStyle(color: Colors.grey[600], fontSize: 12),
-                ),
-                const SizedBox(height: 5),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      '\$120',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-                    Row(
-                      children: const [
-                        Icon(Icons.star, color: Colors.amber, size: 16),
-                        Text('4.0', style: TextStyle(fontSize: 12)),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
