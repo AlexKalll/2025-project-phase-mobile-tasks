@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task6/search_page.dart';
 import 'package:task6/product_card.dart';
 import 'package:task6/details_page.dart';
+import 'package:task6/add_product_page.dart';
 
 void main() {
   runApp(const MyApp());
