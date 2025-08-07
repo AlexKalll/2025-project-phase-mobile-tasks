@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
-import 'package:task9_clean_arch/lib/repositories/product_repository.dart';
-import 'package:task9_clean_arch/lib/usecases/delete_product.dart';
+import 'package:task9_clean_arch/repositories/product_repository.dart';
+import 'package:task9_clean_arch/usecases/delete_product.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import 'delete_product_test.mocks.dart';
 
-@GenerateMocks([ProductRepository])
+@GenerateNiceMocks([MockSpec<ProductRepository>()])
 void main() {
   late DeleteProduct deleteProduct;
   late MockProductRepository mockProductRepository;

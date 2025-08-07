@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:task9_clean_arch/lib/core/usecase.dart';
-import 'package:task9_clean_arch/lib/entities/product.dart';
-import 'package:task9_clean_arch/lib/repositories/product_repository.dart';
-import 'package:task9_clean_arch/lib/usecases/get_all_products.dart';
+import 'package:task9_clean_arch/core/usecase.dart';
+import 'package:task9_clean_arch/entities/product.dart';
+import 'package:task9_clean_arch/repositories/product_repository.dart';
+import 'package:task9_clean_arch/usecases/get_all_products.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -11,7 +11,7 @@ import 'package:mockito/mockito.dart';
 // dart run build_runner build
 import 'get_all_products_test.mocks.dart';
 
-@GenerateMocks([ProductRepository])
+@GenerateNiceMocks([MockSpec<ProductRepository>()])
 void main() {
   late GetAllProducts getAllProducts;
   late MockProductRepository mockProductRepository;
